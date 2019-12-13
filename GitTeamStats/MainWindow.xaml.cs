@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+
+using GitTeamStats.ViewModels;
 
 namespace GitTeamStats {
     /// <summary>
@@ -20,6 +23,23 @@ namespace GitTeamStats {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+
+        }
+
+        private void RepoStats_Click(object sender, RoutedEventArgs e)
+        {
+           Window.GetWindow(this).DataContext = new RepoVM();
+        }
+
+        private void HomeBtn_Click(object sender, RoutedEventArgs e)
+        {
+                       Window.GetWindow(this).DataContext = null;
+
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

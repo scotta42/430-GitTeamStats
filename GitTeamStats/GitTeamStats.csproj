@@ -67,6 +67,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\RepoVM.cs" />
+    <Compile Include="Views\RepoView.xaml.cs">
+      <DependentUpon>RepoView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,6 +83,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\RepoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Contributor.cs" />
@@ -108,6 +116,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PageGraphics\GitTeamHomePage.png" />
+    <Resource Include="Images\PageGraphics\Group 19HomePage.png" />
+    <Resource Include="Images\PageGraphics\StatsHomePage.png" />
+    <Resource Include="Images\PageGraphics\WelcomeHomePage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UIMenuItems\Buttons\DropMenuHome.png" />
+    <Resource Include="Images\UIMenuItems\Buttons\DropMenuHome_Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UIMenuItems\Buttons\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PageGraphics\ContributionsMade 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PageGraphics\WelcomeGraphic.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
