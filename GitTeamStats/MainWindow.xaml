@@ -4,9 +4,58 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GitTeamStats"
+        xmlns:views="clr-namespace:GitTeamStats.Views"
+        xmlns:viewmodels="clr-namespace:GitTeamStats.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="450" Width="800"
+        SizeToContent="Width">
+
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:RepoVM}">
+            <views:RepoView/>
+        </DataTemplate>
+    </Window.Resources>
+
+
+    <Grid Background="#FFE0E0E0">
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="49*" />
+            <ColumnDefinition Width="745*" />
+
+        </Grid.ColumnDefinitions>
+
+        <Grid Height="Auto" x:Name="Home" Visibility="Visible"  HorizontalAlignment="Stretch" Grid.IsSharedSizeScope="True"  Background="#FFE0E0E0" Grid.ColumnSpan="2" Margin="47,0,-0.4,0" >
+
+
+            <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="68,10,68,12" Source="Images/PageGraphics/WelcomeGraphic.png"  />
+            <ContentControl Content="{Binding}" Grid.Column="1"/>
+        </Grid>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Width="49" Height="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" Background="#FF0C438C" Grid.IsSharedSizeScope="True"  MaxWidth="55" Grid.ColumnSpan="2">
+            <Button x:Name="HomeBtn" Content=""  MinHeight="36" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Grid.IsSharedSizeScope="True" BorderBrush="{x:Null}" Click="HomeBtn_Click" Margin="0,0,4.8,0" >
+
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/UIMenuItems/Buttons/DropMenuHome.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="RepoStats" Content=""  MinHeight="36" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Grid.IsSharedSizeScope="True" BorderBrush="{x:Null}" Click="RepoStats_Click" Margin="0,0,2,0" >
+
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/UIMenuItems/Buttons/DropMenuHome.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Rectangle Height="266" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="36" Margin="6,0,6.8,0"/>
+            <StackPanel Grid.Column="0">
+                <Button x:Name="Exit" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" MinWidth="24" MaxWidth="45" MinHeight="31" Click="Exit_Click" Margin="0,0,1.8,0" Height="51">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Images/UIMenuItems/Buttons/Exit.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
     </Grid>
+
 </Window>
